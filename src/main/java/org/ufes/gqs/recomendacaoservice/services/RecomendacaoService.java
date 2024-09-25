@@ -21,8 +21,14 @@ public class RecomendacaoService implements IRecomendacaoService {
 	private final IHistoricoReproducaoRepository historicoReproducaoRepository;
 	private final IUsuarioRepository usuarioRepository;
 
+	public RecomendacaoService( IMusicaRepository musicaRepository, IHistoricoReproducaoRepository historicoReproducaoRepository, IUsuarioRepository usuarioRepository ) {
+		this.musicaRepository = musicaRepository;
+		this.historicoReproducaoRepository = historicoReproducaoRepository;
+		this.usuarioRepository = usuarioRepository;
+	}
+
 	public RecomendacaoService() {
-		this.musicaRepository = MusicaRepository.getMusicaRepository();
+		musicaRepository = MusicaRepository.getMusicaRepository();
 		historicoReproducaoRepository = HistoricoReproducaoRepository.getHistoricoReproducaoRepository();
 		usuarioRepository = UsuarioRepository.getUsuarioRepository();
 	}
