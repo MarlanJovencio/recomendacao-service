@@ -56,7 +56,7 @@ public class RecomendacaoService implements IRecomendacaoService {
 			try {
 				list.addAll( musicaRepository.getMusicasMaisTocadas( artista, 5 ).orElse( Collections.emptyList() ) );
 			} catch ( Exception e ) {
-				throw new RuntimeException( e );
+				System.err.println( "Erro ao obter as músicas mais tocadas para o artista" );
 			}
 		} );
 		return list.stream().distinct().limit( 10 ).toList();
@@ -72,7 +72,7 @@ public class RecomendacaoService implements IRecomendacaoService {
 			try {
 				list.addAll( musicaRepository.getMusicasMaisTocadas( artista, 5 ).orElse( Collections.emptyList() ) );
 			} catch ( Exception e ) {
-				throw new RuntimeException( e );
+				System.err.println( "Erro ao obter as músicas mais tocadas para o artista" );
 			}
 		} );
 
